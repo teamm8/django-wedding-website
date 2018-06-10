@@ -1,3 +1,15 @@
+#TODO
+
+update to python3 
+update to latest version of django
+add password to whole website?
+add day and evening guest management
+elaborate on meal choices
+integrate google maps and link out to satnav
+get a hash tag
+modify to who, what, when, where, why, and how
+design custom invites
+
 # A Django Wedding Website and Invitation + Guest Management System
 
 Live site examples:
