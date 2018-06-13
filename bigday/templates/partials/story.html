@@ -4,16 +4,59 @@
             <h2 class="section-heading text-center">Our Story</h2>
             <hr class="primary">
             <p>
-                People have referred to Cory and Rowena as "the greatest couple in the history of time".
-                They have also called them "a power couple the likes of which the world has never before seen".
-                Okay, the people that said those things are Cory and Ro and they may be a little biased.
+                Morgan and Leo met once upon a time back in sixth form college. Only <a id="date_we_met"></a> days ago, not that anyone is counting!
+                We first encountered each other at the classy pizza hut establishment in wimbledon where we both went to secondary school.
+                We kept our romance a secret until our a level exams where over in 2008.
             </p>
+            <p>Some stories and stuff to fill in with photos. I liked doing the code for the days and years!</p>
             <p>
-                Despite their self-proclaimed greatness, Cory and Ro have a pretty typical story. They met working together.
-                Cory was blown away by Rowena's passion and thirst for adventure.
-                Ro thought Cory was alright looking and a pretty good programmer.
-                It did take years, but somehow he managed to woo her into considering him as a partner, and the rest has been history.
+                We'd like to say that over the past <a id="years_together"></a> years have been awesome. Highs, lows and everything in between!
             </p>
         </div>
     </div>
 </div>
+
+<!-- put this in a seperate js file
+this is the script that works out the dates above-->
+<script type="text/javascript">
+// new Date("dateString") is browser-dependent and discouraged, so we'll write
+// a simple parse function for U.S. date format (which does no error checking)
+function parseDate(str) {
+    var mdy = str.split('/');
+    return new Date(mdy[2], mdy[0]-1, mdy[1]);
+}
+
+function datediff(first, second) {
+    // Take the difference between the dates and divide by milliseconds per day.
+    // Round to nearest whole number to deal with DST.
+    return Math.round((second-first)/(1000*60*60*24));
+}
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+
+var yyyy = today.getFullYear();
+if(dd<10){
+    dd='0'+dd;
+}
+if(mm<10){
+    mm='0'+mm;
+}
+var today = dd+'/'+mm+'/'+yyyy;
+
+function date_we_met(days){
+    document.getElementById("date_we_met").innerHTML = days;
+}
+
+function years_together(days){
+    var years = Math.round(days/365);
+    document.getElementById("years_together").innerHTML = years
+}
+
+window.onload = date_we_met(datediff(parseDate("12/06/2006"), parseDate(today)));
+window.onload = years_together(datediff(parseDate("16/06/2008"), parseDate(today)));
+</script>
+
+
+
