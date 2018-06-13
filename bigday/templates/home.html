@@ -3,6 +3,7 @@
 {% block page_head %}
     <!-- Custom CSS -->
     <link href="{% static 'bigday/css/creative.css' %}" rel="stylesheet">
+
 {% endblock %}
 {% block page_content %}
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
@@ -15,7 +16,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Cory and Rowena's Big Day</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Leo and Morgan's Big Day</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -24,13 +25,13 @@
                         <a class="page-scroll" href="#main-header">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#event">Event</a>
+                        <a class="page-scroll" href="#event">Day</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#niagara">Niagara-on-the-Lake</a>
+                        <a class="page-scroll" href="#evening-event">Evening</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#other-stuff">Everything Else</a>
+                        <a class="page-scroll" href="#story">Our Tale</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -45,14 +46,12 @@
     <header id="main-header">
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>We did it!!</h1>
-                {% comment %}
-                <hr>
-                <h2>It's wedding week!</h2>
-                <a href="#welcome" class="btn btn-info btn-xl page-scroll">Welcome</a>
-                <a href="#event" class="btn btn-primary btn-xl page-scroll">Friday</a>
-                <a href="#saturday-event" class="btn btn-success btn-xl page-scroll">Saturday</a>
-                {% endcomment %}
+                <h1>He finally asked!</h1>
+                <!--<hr>-->
+                <!--<a href="#welcome" class="btn btn-info btn-xl page-scroll">Welcome</a>-->
+                <a href="#event" class="btn btn-info btn-xl page-scroll">Day</a>
+                <a href="#evening-event" class="btn btn-info btn-xl page-scroll">Evening</a>
+
             </div>
         </div>
     </header>
@@ -63,21 +62,20 @@
                     <h2 class="section-heading">Welcome!</h2>
                     <hr>
                     <p>
-                        Hello friends and family! It's the week of the wedding!
+                        Hello friends and family! It's a a good year out from the wedding but things are starting to come together.
                     </p>
                     <p>
                         If you're looking for information about the event, look no further!
-                        Please see below for all the details regarding <a href="#event" class="page-scroll">Friday night's welcome party</a> and <a href="#saturday-event" class="page-scroll">Saturday's event</a>.
+                        Please see below for all the details for <a href="#event" class="page-scroll">day guests</a> and <a href="#evening-event" class="page-scroll">evening guests</a>.
                     </p>
                     <p>
-                        To get added to the wedding whatsapp group first create an account and then send an
-                        email to <a href="mailto:{{ support_email }}">{{ support_email }}</a>.
-                        Also, the current front-runner for the wedding hashtag (if you're into that sort of thing) is #getlukky.
+                        If you have any questions regarding the big day, please feel free drop drop us an email: <a href="mailto:{{ support_email }}">{{ support_email }}</a>.
+                        Also, the current front-runner for the wedding hashtag (if you're into that sort of thing) is #jaeggioneill.
                     </p>
                     <p>
-                        Looking forward to seeing everyone soon!
+                        Looking forward to seeing everyone soon (ish)!
                     </p>
-                    <p class="pull-right">- Cory and Rowena</p>
+                    <p class="pull-right">- Leo and Morgan</p>
                 </div>
             </div>
         </div>
@@ -87,23 +85,23 @@
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
                     <a href="#event" class="portfolio-box page-scroll">
-                        <img src="{% static 'bigday/images/ravine-nav.jpg' %}" class="img-responsive" alt="">
+                        <img src="{% static '/bigday/images/st_osmunds_salisbury_old_640x395.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    The Event
+                                    During the day
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#niagara" class="portfolio-box page-scroll">
-                        <img src="{% static 'bigday/images/prince-of-wales-hotel-nav.jpg' %}" class="img-responsive" alt="">
+                    <a href="#evening-event" class="portfolio-box page-scroll">
+                        <img src="{% static 'bigday/images/grey_manor_hotel_640x395.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    Niagara-on-the-Lake
+                                    In the evening
                                 </div>
                             </div>
                         </div>
@@ -111,7 +109,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#story" class="portfolio-box page-scroll">
-                        <img src="{% static 'bigday/images/twelve-apostles-nav.jpg' %}" class="img-responsive" alt="">
+                        <img src="{% static 'bigday/images/july2011_640x395.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
@@ -125,24 +123,41 @@
         </div>
     </section>
     {% include 'partials/event.html' %}
-    <section id="niagara">
-        {% include 'partials/niagara.html' %}
-    </section>
+    {% include 'partials/evening-event.html' %}
+
 {% comment %}
-        {% include 'partials/wedding-party.html' %}
+    {% include 'partials/wedding-party.html' %}
 {% endcomment %}
-    <section id="other-stuff" class="bg-primary">
+
+{% comment %}
+    <section id="other-stuff" class="bg-primary nopadding">
         {% include 'partials/misc.html' %}
     </section>
+{% endcomment %}
+
+{% comment %}
     <section id="gifts">
         {% include 'partials/gifts.html' %}
     </section>
-    <section id="story" class="bg-dark">
+{% endcomment %}
+
+    <section id="story" class="bg-dark nopadding">
         {% include 'partials/story.html' %}
     </section>
+
+{% comment %}
+    <section>
     {% include 'partials/proposal.html' %}
-    {% include 'partials/save-the-dates.html' %}
-    <section id="contact" class="bg-dark">
+    </section>
+{% endcomment %}
+
+{% comment %}
+    <section>
+        {% include 'partials/save-the-dates.html' %}
+    </section>
+{% endcomment %}
+
+    <section id="contact" class="bg-info nopadding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
