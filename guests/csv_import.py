@@ -5,7 +5,7 @@ from guests.models import Party, Guest
 
 
 def import_guests(path):
-    with open(path, 'rb') as csvfile:
+    with open(path, 'r') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         first_row = True
         for row in reader:
@@ -31,6 +31,7 @@ def import_guests(path):
                 guest = Guest.objects.get_or_create(party=party, first_name=first_name, last_name=last_name)[0]
             guest.is_child = _is_true(is_child)
             guest.save()
+            print (first_name, "processed")
 
 
 def export_guests():
